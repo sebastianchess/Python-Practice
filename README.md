@@ -1,4 +1,4 @@
-### Iterator
+# Iterator
 I'm not really experienced with Iterators. I'd say this is my first time implementing them in senseful code. Well in this code I am making a replicate of `builtins.range` type. To summarize the explanation, Iterables are objects you can loop through. Iterators are objects (classes) that contains `__next__` and `__iter__` (obviously). Not all Iterables are Iterators, for example `builtins.list` you can loop through it, but it doesn't use `__next__`.
 
 **Simple Implementation**
