@@ -26,5 +26,58 @@ for i in obj: print(i)
 When you loop through it, it will first call `__iter__` and set the counter to where it's supposed to start at (0). Then since it returns the instance itself which is an iterator, this will call `next` N times until `self.counter` becomes the limit number we passed. 
 
 
+# Decorators
+
+### Explanation:
+Decorators are functions that modify the functionality of other functions. They are used in the following syntax:
+```py
+@the_decorator
+def function(): ...
+```
+Note that `@the_decorator` means that the function we created `function` will be passed to `the_decorator` function in parameters, which means `function` will stop being the function itself but the value returned by `the_decorator`, meaning:
+```py
+function = the_decorator(function)
+```
+
+### CODE EXAMPLE
+```py
+def decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Before func was called")
+        func(*args, **kwargs)
+        print("After it was called")
+    return wrapper
+
+@decorator
+def message():
+    print("Hello World")
+```
+So when you do `message()` you'd actually be calling `wrapper`.
+
+There are also decorators that receive arguments, which I posted in the `Decorator.py`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
